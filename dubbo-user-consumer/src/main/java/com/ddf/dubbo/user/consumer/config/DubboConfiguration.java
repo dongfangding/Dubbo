@@ -34,7 +34,6 @@ public class DubboConfiguration {
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress("zookeeper://192.168.1.5:2181");
-        registryConfig.setClient("curator");
         return registryConfig;
     }
 }

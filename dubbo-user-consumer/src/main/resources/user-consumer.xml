@@ -10,6 +10,6 @@
     <!-- 使用zookeeper注册中心暴露发现服务地址 -->
     <dubbo:registry address="zookeeper://192.168.1.5:2181" />
 
-    <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
+    <!-- 生成远程服务代理，可以和本地bean一样使用UserService -->
     <dubbo:reference id="userService" interface="com.ddf.dubbo.common.interfaces.user.UserService" />
 </beans>
