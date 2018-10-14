@@ -16,7 +16,7 @@ public class UserServiceRef {
     @Reference
     private UserService userService;
 
-    public List<User> list() {
-        return userService.list();
+    public List<User> quickStart() {
+        return userService.quickStart();
     }
 }

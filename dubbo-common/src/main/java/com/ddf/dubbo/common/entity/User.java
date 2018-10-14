@@ -9,8 +9,11 @@ import java.io.Serializable;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class User implements Serializable {
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(callSuper = true)
+public class User extends BaseDomain implements Serializable {
     private Integer id;
     private String username;
     private String password;

@@ -6,7 +6,6 @@ import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author DDf on 2018/10/11
@@ -14,8 +13,13 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @Configurable
 @DubboComponentScan(basePackages = "com.ddf.dubbo.common.interfaces")
-@ComponentScan("com.ddf.dubbo")
 public class DubboConfiguration {
+
+    /**
+     * 应用信息配置,用以暴漏当前应用，对应配置类ApplicationConfig
+     * http://dubbo.apache.org/zh-cn/docs/user/references/xml/dubbo-application.html
+     * @return
+     */
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig applicationConfig = new ApplicationConfig();
@@ -23,6 +27,11 @@ public class DubboConfiguration {
         return applicationConfig;
     }
 
+    /**
+     * 设置消费方的全局配置，
+     * 关于配置这一块，请参考官方最佳配置用法http://dubbo.apache.org/zh-cn/docs/user/recommend.html
+     * @return
+     */
     @Bean
     public ConsumerConfig consumerConfig() {
         ConsumerConfig consumerConfig = new ConsumerConfig();
@@ -30,6 +39,11 @@ public class DubboConfiguration {
         return consumerConfig;
     }
 
+    /**
+     * 设置注册中心
+     * RegistryConfig 注册中心配置 http://dubbo.apache.org/zh-cn/docs/user/references/xml/dubbo-registry.html
+     * @return
+     */
     @Bean
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();

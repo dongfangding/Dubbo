@@ -7,15 +7,20 @@ import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
+
 
 /**
  *
  * @author DDf on 2018/10/11
- * 指定暴露接口的实现类，需要实现类使用@Service注解，需要注意的是这个是com.alibaba.dubbo.config.annotation.Service的包，不要导错了
- * @DubboComponentScan(basePackages = "com.ddf.dubbo.user.provider.service.impl")
+ * @DubboComponentScan 扫描所有标注了注解com.alibaba.dubbo.config.annotation.Service，需要暴露的接口
+ *
+ *
+ * 配置手册请参考官网：
+ * http://dubbo.apache.org/zh-cn/docs/user/references/xml/introduction.html
+ *
  */
 @Configurable
-@ComponentScan("com.ddf.dubbo")
 @DubboComponentScan(basePackages = "com.ddf.dubbo.user.provider.service.impl")
 public class DubboConfiguration {
 
@@ -27,9 +32,11 @@ public class DubboConfiguration {
      */
     @Bean
     public ApplicationConfig applicationConfig() {
+        // 描述当前应用信息
         ApplicationConfig applicationConfig = new ApplicationConfig();
         applicationConfig.setName("dubbo-user-provider");
 
+        // 注册中心地址
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress("zookeeper://192.168.1.5:2181");
         applicationConfig.setRegistry(registryConfig);
@@ -38,7 +45,7 @@ public class DubboConfiguration {
 
 
     /**
-     * 服务提供者协议配置
+     * 协议配置
      * http://dubbo.apache.org/zh-cn/docs/user/references/xml/dubbo-protocol.html
      * @return
      */
