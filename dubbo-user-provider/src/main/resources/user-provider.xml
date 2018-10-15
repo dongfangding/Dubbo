@@ -14,8 +14,8 @@
     <dubbo:protocol name="dubbo" port="20882" />
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.ddf.dubbo.common.interfaces.user.UserService" ref="userService" />
+    <dubbo:service interface="com.ddf.dubbo.common.interfaces.user.QuickStartService" ref="quickStartService" />
 
     <!-- 和本地bean一样实现服务 -->
-    <bean id="userService" class="com.ddf.dubbo.user.provider.service.impl.UserServiceImpl" />
+    <bean id="quickStartService" class="com.ddf.dubbo.user.provider.service.impl.QuickStartServiceImpl" />
 </beans>

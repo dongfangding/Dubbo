@@ -10,4 +10,10 @@ import java.util.List;
 public interface UserService {
 
     List<User> quickStart();
+
+    User registryUser(User user);
+
+    User login(String username, String password);
+
+    List<User> list();
 }

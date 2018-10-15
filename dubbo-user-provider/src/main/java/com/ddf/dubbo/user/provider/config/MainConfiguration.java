@@ -3,6 +3,7 @@ package com.ddf.dubbo.user.provider.config;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * @author DDf on 2018/10/14
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @ComponentScan("com.ddf.dubbo")
-@Import(value = {DubboConfiguration.class})
-//@ImportResource(value = {"classpath:user-provider.xml"})
+//@Import(value = {DubboConfiguration.class})
+@ImportResource(value = {"classpath:user-provider.xml"})
 public class MainConfiguration {
 }

@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/dubbo?characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+    name: druid
+    initialization-mode: never
+  jpa:
+    show-sql: true
+    database: MYSQL
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+dubbo:
+  application:
+    name: boot-user-provider
+  registry:
+    address: zookeeper://192.168.1.5:2181
+
+  protocol:
+    name: dubbo
+    port: 20082

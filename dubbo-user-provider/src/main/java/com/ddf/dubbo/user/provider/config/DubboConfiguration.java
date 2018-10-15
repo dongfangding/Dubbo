@@ -4,10 +4,7 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 
 
 /**
@@ -20,7 +17,6 @@ import org.springframework.context.annotation.Import;
  * http://dubbo.apache.org/zh-cn/docs/user/references/xml/introduction.html
  *
  */
-@Configurable
 @DubboComponentScan(basePackages = "com.ddf.dubbo.user.provider.service.impl")
 public class DubboConfiguration {
 
