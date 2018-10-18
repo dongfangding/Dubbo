@@ -21,8 +21,7 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseDomain {
     @Id
-    @GeneratedValue
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "CREATE_BY")

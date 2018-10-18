@@ -12,6 +12,12 @@ public class QuickStartServiceRef {
 
     @Reference
     private QuickStartService quickStartService;
+    /**
+     * 如果使用xml配置文件已经使用了<dubbo:reference></dubbo:reference>标签生成了远程服务代理对象，则这里使用就可以使用@Autowired，
+     * 否则，则需要使用@Reference
+     */
+    /*@Autowired
+    private QuickStartService quickStartService;*/
 
     public String sayHello(String msg) {
         return quickStartService.sayHello(msg);

@@ -17,15 +17,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name = "USER")
+@AllArgsConstructor
 public class User extends BaseDomain implements Serializable {
     @Column(name = "USER_NAME")
     private String username;
     @Column(name = "PASSWORD")
     private String password;
-
-    public User(Integer id, String username, String password) {
-        this.setId(id);
-        this.username = username;
-        this.password = password;
-    }
 }

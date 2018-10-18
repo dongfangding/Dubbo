@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author DDf on 2018/10/15
  */
 public interface UserRespository extends JpaRepository<User, Integer> {
+    User getUserByUsernameAndPassword(String username, String password);
 }

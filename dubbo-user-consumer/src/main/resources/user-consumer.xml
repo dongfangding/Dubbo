@@ -10,6 +10,6 @@
     <!-- 使用zookeeper注册中心暴露发现服务地址 -->
     <dubbo:registry address="zookeeper://192.168.1.5:2181" />
 
-    <!-- 生成远程服务代理，可以和本地bean一样使用UserService -->
-    <dubbo:reference id="userService" interface="com.ddf.dubbo.common.interfaces.user.UserService" />
+    <!-- 生成远程服务代理，可以和本地bean一样使用UserService,如果这里已经使用该标签生成了服务代理对象，则如果需要引用服务，则使用@Autowired注解注入即可 -->
+    <dubbo:reference id="quickStartService" interface="com.ddf.dubbo.common.interfaces.user.QuickStartService" />
 </beans>

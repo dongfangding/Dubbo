@@ -1,6 +1,7 @@
 package com.ddf.dubbo.common.interfaces.user;
 
 import com.ddf.dubbo.common.entity.User;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -9,11 +10,11 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<User> quickStart();
+    List<User> batchRegistryUser(Iterable<User> iterable);
 
     User registryUser(User user);
 
     User login(String username, String password);
 
-    List<User> list();
+    Page<User> list(int page, int size);
 }

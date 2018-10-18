@@ -2,8 +2,6 @@ package com.ddf.dubbo.user.provider;
 
 import com.ddf.dubbo.common.interfaces.user.QuickStartService;
 import com.ddf.dubbo.user.provider.config.MainConfiguration;
-import com.ddf.dubbo.user.provider.service.impl.QuickStartServiceImpl;
-import com.ddf.dubbo.user.provider.service.impl.UserServiceImpl;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
