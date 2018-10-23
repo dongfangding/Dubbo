@@ -23,7 +23,7 @@ public class DubboConfiguration {
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName("dubbo-user-consumer");
+        applicationConfig.setName("dubbo-user-provider");
         return applicationConfig;
     }
 

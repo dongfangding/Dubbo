@@ -17,6 +17,7 @@ import java.util.List;
  * 本类主要做演示，不对数据进行合理性或重复性校验
  */
 @Service
+@org.springframework.stereotype.Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRespository userRespository;

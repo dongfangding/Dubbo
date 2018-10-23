@@ -44,11 +44,13 @@ public class UserServiceImplTest extends DubboBootUserProviderApplicationTests {
     @Transactional
     public void testList() {
         Page<User> page = userService.list(1, 10);
-        System.out.println(page.getTotalPages());
-        System.out.println(page.getTotalElements());
         if (page != null && page.getContent() != null) {
             System.out.println("-------------testList----------------");
-            page.getContent().forEach(System.out::println);
+            List<User> content = page.getContent();
+            for (User user : content) {
+                System.out.println(user.getUsername() + "***********************");
+            }
+            System.out.println("-------------testList----------------");
         }
     }
 }
