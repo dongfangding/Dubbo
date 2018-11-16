@@ -1,6 +1,6 @@
 # Dubbo
 
-##项目介绍
+## 项目介绍
 Dubbo的简单学习和使用，预计先使用配置类编码的方式来学习基本的使用，最后使用spring-boot的starter来完成dubbo的整合
 
 

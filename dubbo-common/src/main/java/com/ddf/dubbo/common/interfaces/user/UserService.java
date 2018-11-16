@@ -16,5 +16,5 @@ public interface UserService {
 
     User login(String username, String password);
 
-    Page<User> list(int page, int size);
+    List<User> list(int page, int size);
 }

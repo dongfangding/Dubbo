@@ -39,7 +39,7 @@ public class DubboBootUserProviderApplication implements ApplicationContextAware
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println(applicationContext);
-        this.applicationContext = applicationContext;
+        DubboBootUserProviderApplication.applicationContext = applicationContext;
     }
 
     @Override

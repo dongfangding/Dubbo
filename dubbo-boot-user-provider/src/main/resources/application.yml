@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8089
 spring:
   datasource:
     username: root
@@ -22,7 +22,7 @@ dubbo:
   application:
     name: boot-user-provider
   registry:
-    address: zookeeper://192.168.1.5:2181
+    address: zookeeper://10.232.228.157:2181
 
   protocol:
     name: dubbo
