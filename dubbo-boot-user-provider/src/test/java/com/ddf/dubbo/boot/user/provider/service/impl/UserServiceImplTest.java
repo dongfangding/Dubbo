@@ -6,6 +6,7 @@ import com.ddf.dubbo.common.interfaces.user.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;

@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping("user")
 public class UserController {
 
-    @Reference
+    @Reference(check = false, version = "1.0")
     private UserService userService;
 
     @RequestMapping("/add")

@@ -5,7 +5,6 @@ import com.ddf.dubbo.boot.user.provider.repository.UserRespository;
 import com.ddf.dubbo.common.entity.User;
 import com.ddf.dubbo.common.interfaces.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,6 +44,8 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 如果使用Controller来接收客户端参数，则可以使用Pageable对象直接接收客户端的参数，会被自动封装成对象
+     * 但是使用dubbo协议之后Pageable并不能序列化传输，所以这里只能修改为基础属性，同样返回的Page对象也不能
+     * 序列化传输，所以修改为了List对象来接收
      * @param page
      * @param size
      * @return
@@ -52,6 +53,11 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(readOnly = true)
     public List<User> list(int page, int size) {
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         PageRequest pageRequest = PageRequest.of(page, size);
         return userRespository.findAll(pageRequest).getContent();
     }

@@ -22,7 +22,7 @@ dubbo:
   application:
     name: boot-user-provider
   registry:
-    address: zookeeper://10.232.228.157:2181
+    address: zookeeper://10.232.228.223:2181
 
   protocol:
     name: dubbo

@@ -22,9 +22,4 @@ dubbo:
   application:
     name: boot-user-consumer
   registry:
-    address: zookeeper://10.232.228.157:2181
-
-  ## 如果即作为消费者又作为服务端，则下面的协议不需要配置，否则会出现问题
-  #protocol:
-    #name: dubbo
-    #port: 20082
+    address: zookeeper://10.232.228.223:2181

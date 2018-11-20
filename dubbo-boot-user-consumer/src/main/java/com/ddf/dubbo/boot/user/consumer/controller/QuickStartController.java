@@ -1,4 +1,4 @@
-package com.ddf.dubbo.boot.user.provider.controller;
+package com.ddf.dubbo.boot.user.consumer.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.ddf.dubbo.common.interfaces.user.QuickStartService;
@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuickStartController {
 
-    @Reference
+    @Reference(check = false, version = "1.0")
     private QuickStartService quickStartService;
 
     @RequestMapping("/sayHello")
     public String sayHello(@RequestParam String msg) {
+        System.out.println(msg);
+        System.out.println(quickStartService);
         return quickStartService.sayHello(msg);
     }
 }
